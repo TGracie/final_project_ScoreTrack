@@ -29,7 +29,10 @@ export default class Page extends Component{
     return(
       <div className="container">
         <h2>This is my page</h2>
+        <div className="scores">
         <Scoreboard scores={this.state.rugby.scores}/>
+        <Scoreboard scores={this.state.rugby.scores}/>
+        </div>
       </div>
     )
   }

@@ -1,3 +1,25 @@
+
+.scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  margin: 10px;
+}
+
 .scoreboard{
   border: 3px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.nums{
+  border: 2px solid red;
+  margin: 20px;
+}
+
+.button{
+  border: 1px solid blue;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }

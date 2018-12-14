@@ -22,24 +22,12 @@ export default class Scoreboard extends Component {
   render(){
     // console.log(this.props);
     return(
-      <>
-      <h2 className="scoreboard">
+      <div className="scoreboard">
+      <h2>
       Scores {this.state.team1}
       </h2>
       <ButtonBox scores={this.props.scores} onScoreClicked={this.handleScore}/>
-      </>
+      </div>
     )
   }
 } // class end
-
-
-
-
-// const Scoreboard = (props) => {
-  //   return(
-    //     <>
-    //     <h3>This is the Scoreboard</h3>
-    //     <h4>It goes below the timer</h4>
-    //     </>
-    //   )
-    // }

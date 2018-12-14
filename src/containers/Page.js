@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 // import Timer3 from '../components/Timer3.js';
-import Timer2 from '../components/Timer2.js';
+// import Timer2 from '../components/Timer2.js';
 import Scoreboard from '../components/Scoreboard.js';
 // import Example from '../components/Example.js';
 

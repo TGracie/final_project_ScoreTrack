@@ -22,8 +22,7 @@ const ButtonBox = (props) => {
 
   return(
     <>
-    <h3>This is the Button container/box thing</h3>
-    <h4>{buttons}</h4>
+    {buttons}
     </>
   )
 }

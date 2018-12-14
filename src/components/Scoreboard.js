@@ -5,7 +5,9 @@ export default class Scoreboard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      team1: 0,
+      teamName: 'Team',
+      named: false,
+      score: 0,
       lastOp: 0
     }
     this.handleScore = this.handleScore.bind(this);
@@ -16,22 +18,23 @@ export default class Scoreboard extends Component {
     let currentScore = this.state.team1;
     let newScore = parseInt(currentScore) + parseInt(value);
     this.setState(
-      {team1: newScore,
-       lastOp: value}
+      {score: newScore,
+       lastOp: value,
+      }
     );
   }
 
   oops(){
-    let currentScore = this.state.team1;
+    let currentScore = this.state.score;
     let newScore = parseInt(currentScore) - parseInt(this.state.lastOp);
-    
-      if(this.state.team1 - this.state.lastOp > 0){
+
+      if(this.state.score - this.state.lastOp > 0){
         this.setState({
-          team1: newScore
+          score: newScore
         })
       }else{
         this.setState({
-          team1: 0
+          score: 0
           })
         }
   }
@@ -40,8 +43,9 @@ export default class Scoreboard extends Component {
     // console.log(this.props);
     return(
       <div className="scoreboard">
+      <h4>{this.state.teamName}</h4>
       <h3 className="nums">
-      {this.state.team1}
+      {this.state.score}
       </h3>
       <ButtonBox scores={this.props.scores} onScoreClicked={this.handleScore}/>
       <button className="button" value={this.state.lastOp} onClick={this.oops}>Undo</button>

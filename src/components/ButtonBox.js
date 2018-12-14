@@ -1,22 +1,29 @@
 import React from 'react';
 
 const ButtonBox = (props) => {
+
+
   if(props.scores == null || props.scores.length === 0){
-    return<p>Loading score options....</p>
+    return<p>Loading scoring options....</p>
   }
 
-const scores = props.scores;
+  const scores = props.scores;
 
-let buttons = []
-  for(let key in scores){
-      // console.log("key: " + key + "/ score: " + scores[key]);
-      buttons.push(<button className={key} value={scores[key]}>{key}</button>)
+  let buttons = []
+    for(let key in scores){
+        // console.log("key: " + key + "/ score: " + scores[key]);
+        buttons.push(<button className={key} value={scores[key]} onClick={handleClick}>{key}</button>)
+    }
+
+  function handleClick(event){
+    console.log("Button value hopefully", event.target.value);
+    props.onScoreClicked(event.target.value);
   }
 
   return(
     <>
     <h3>This is the Button container/box thing</h3>
-    <h4>Buttons hopefully: {buttons}</h4>
+    <h4>{buttons}</h4>
     </>
   )
 }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // const ms = require('pretty-ms');
 
 
-export default class Timer extends Component{
+export default class Timer2 extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -42,7 +42,8 @@ render(){
   <button onClick={this.startTimer}>Start</button> :
   null
 
-  let stop = (this.state.time === 0 || !this.state.isOn) ?
+  let stop =
+  (this.state.time === 0 || !this.state.isOn) ?
   null:
   <button onClick={this.stopTimer}>Stop</button>
 
@@ -55,7 +56,7 @@ render(){
   <button onClick={this.resetTimer}>Reset</button>
   return(
     <div className="timer">
-      <h3>Timer: {this.state.time}</h3>
+      <h3>Timer2: {this.state.time}</h3>
       {start}
       {resume}
       {stop}
@@ -68,7 +69,7 @@ render(){
 
 
 
-// const Timer = (props) => {
+// const Timer2 = (props) => {
   //   return(
     //     <>
     //     <h3>This is the timer</h3>
@@ -78,4 +79,4 @@ render(){
     //     </>
     //   )
     // }
-// export default Timer;
+// export default Timer2;

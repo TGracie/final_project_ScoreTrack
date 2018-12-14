@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import Timer from '../components/Timer.js';
+import Timer3 from '../components/Timer3.js';
+import Timer2 from '../components/Timer2.js';
 import Scoreboard from '../components/Scoreboard.js';
 import ButtonBox from '../components/ButtonBox.js';
+import Example from '../components/Example.js';
 
 export default class Page extends Component{
   constructor(props){
@@ -19,17 +21,23 @@ export default class Page extends Component{
         }
       }
     }
+
+    // method bindings in here
+
   } // constructor end
 
   render(){
     return(
       <div className="container">
         <h2>This is my page</h2>
-        <Timer duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
-        <Scoreboard/>
-        <ButtonBox scores={this.state.rugby.scores}/>
+        <Scoreboard scores={this.state.rugby.scores}/>
+        <Timer3 duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
       </div>
     )
   }
 
 }// class end
+
+// <ButtonBox scores={this.state.rugby.scores}/>
+// <Timer2 duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
+// <Example/>

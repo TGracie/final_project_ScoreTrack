@@ -5,7 +5,7 @@ export default class Timer3 extends Component {
      super(props);
      this.state = {
        seconds: '00',
-       minutes: '00'
+       minutes: '01'
      }
      // this.secondsRemaining;
      // this.intervalHandle;

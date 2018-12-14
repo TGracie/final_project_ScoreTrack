@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import Timer3 from '../components/Timer3.js';
+// import Timer3 from '../components/Timer3.js';
 import Timer2 from '../components/Timer2.js';
 import Scoreboard from '../components/Scoreboard.js';
-import ButtonBox from '../components/ButtonBox.js';
-import Example from '../components/Example.js';
+// import Example from '../components/Example.js';
 
 export default class Page extends Component{
   constructor(props){
@@ -31,13 +30,13 @@ export default class Page extends Component{
       <div className="container">
         <h2>This is my page</h2>
         <Scoreboard scores={this.state.rugby.scores}/>
-        <Timer3 duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
       </div>
     )
   }
 
 }// class end
-
-// <ButtonBox scores={this.state.rugby.scores}/>
 // <Timer2 duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
-// <Example/>
+
+// <Example playTime={this.state.rugby.duration} periods={this.state.rugby.periods}/>
+// <Timer3 duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
+// <ButtonBox scores={this.state.rugby.scores}/>

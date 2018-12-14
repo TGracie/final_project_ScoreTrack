@@ -6,7 +6,7 @@ export default class Scoreboard extends Component {
     super(props);
     this.state = {
       team1: 0,
-      team2: 0
+      // team2: 0
     }
     this.handleScore = this.handleScore.bind(this);
   }

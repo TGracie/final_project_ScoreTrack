@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
 export default class Example extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       time: {},
-      seconds: 5 };
+      seconds: 0 };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
@@ -21,6 +21,7 @@ export default class Example extends Component {
     let seconds = Math.ceil(divisor_for_seconds);
 
     let obj = {
+      "h": hours,
       "m": minutes,
       "s": seconds
     };
@@ -28,7 +29,7 @@ export default class Example extends Component {
   }
 
   componentDidMount() {
-    let timeLeftVar = this.secondsToTime(this.state.seconds);
+    let timeLeftVar = this.secondsToTime(this.props.playTime);
     this.setState({ time: timeLeftVar });
   }
 

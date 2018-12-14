@@ -38,19 +38,19 @@ export default class Timer extends Component{
 
 render(){
 
-  let start = (this.state.time == 0) ?
-  <button onClick={this.startTimer}>Start</button>:
+  let start = (this.state.time === 0) ?
+  <button onClick={this.startTimer}>Start</button> :
   null
 
-  let stop = (this.state.time == 0 || !this.state.isOn) ?
+  let stop = (this.state.time === 0 || !this.state.isOn) ?
   null:
   <button onClick={this.stopTimer}>Stop</button>
 
-  let resume = (this.state.time == 0 || this.state.isOn) ?
+  let resume = (this.state.time === 0 || this.state.isOn) ?
   null:
   <button onClick={this.startTimer}>Resume</button>
 
-  let reset = (this.state.time == 0 || this.state.isOn) ?
+  let reset = (this.state.time === 0 || this.state.isOn) ?
   null:
   <button onClick={this.resetTimer}>Reset</button>
   return(

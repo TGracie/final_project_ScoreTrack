@@ -59,7 +59,7 @@ export default class Scoreboard extends Component {
 
     let form = (this.state.named === false) ?
               <form onSubmit={this.setTeamName}>
-              <input type="text" name="Team-Name" value="Enter Team Name"/>
+              <input type="text" name="Team-Name" placeholder="Enter Team Name"/>
               </form>
               :
               null;

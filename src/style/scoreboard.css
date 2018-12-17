@@ -1,0 +1,32 @@
+.scoreboard{
+  /* display: flex;
+  justify-content: space-around; */
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+.nums{
+  border: 2px solid red;
+  margin: 20px;
+}
+
+.button{
+  border: 1px solid blue;
+  display: block;
+  height: 30px;
+  width: 60%;
+  margin: 3% 20% 3% 20%;
+}
+
+.reset-button{
+  text-align: center;
+  font-size: 1em;
+  width: 60%;
+  height: 2em;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 1px solid red;
+  background-color: orange;
+}

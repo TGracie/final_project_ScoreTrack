@@ -1,0 +1,33 @@
+body{
+  background-image: url('./rugby-background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.title{
+  text-align: center;
+  border-radius: 2em;
+  width: 50%;
+  margin-left: 25%;
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+.scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+  margin: 5px 10px 10px 10px;
+}
+
+/* .scores{
+  background-color: #08B920;
+} */
+
+.timer{
+  border: 2px solid purple;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.5);
+}

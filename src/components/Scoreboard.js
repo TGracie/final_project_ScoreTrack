@@ -13,6 +13,7 @@ export default class Scoreboard extends Component {
     this.handleScore = this.handleScore.bind(this);
     this.oops = this.oops.bind(this);
     this.reset = this.reset.bind(this);
+    this.setTeamName = this.setTeamName.bind(this);
   }
 
   handleScore(value){
@@ -30,7 +31,8 @@ export default class Scoreboard extends Component {
     let newScore = currentScore - this.state.lastOp;
       if(this.state.score - this.state.lastOp > 0){
         this.setState({
-          score: newScore
+          score: newScore,
+          lastOp: 0
         })
       }else{
         this.setState({
@@ -45,11 +47,27 @@ export default class Scoreboard extends Component {
     )
   }
 
+  setTeamName(event){
+    const form = event.target;
+    this.setState(
+      {teamName: form["Team-Name"].value,
+       named: true}
+    )
+  }
+
   render(){
-    // console.log(this.props);
+
+    let form = (this.state.named === false) ?
+              <form onSubmit={this.setTeamName}>
+              <input type="text" name="Team-Name" value="Enter Team Name"/>
+              </form>
+              :
+              null;
+
     return(
       <div className="scoreboard">
-      <h4>{this.state.teamName}</h4>
+      {form}
+      <h3>{this.state.teamName}</h3>
       <h3 className="nums">
       {this.state.score}
       </h3>

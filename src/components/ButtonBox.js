@@ -16,7 +16,7 @@ const ButtonBox = (props) => {
     }
 
   function handleClick(event){
-    // let value = event.target.value;
+    let value = event.target.value;
     // console.log("Button value hopefully", value);
     props.onScoreClicked(event);
   }

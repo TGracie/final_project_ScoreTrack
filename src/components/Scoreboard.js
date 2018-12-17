@@ -72,7 +72,7 @@ export default class Scoreboard extends Component {
       {this.state.score}
       </h3>
       <ButtonBox scores={this.props.scores} onScoreClicked={this.handleScore}/>
-      <button className="button" value={this.state.lastOp} onClick={this.oops}>Undo</button>
+      <button className="undo-button" value={this.state.lastOp} onClick={this.oops}>Undo</button>
       <button className="reset-button" onClick={this.reset}>Reset</button>
       </div>
     )

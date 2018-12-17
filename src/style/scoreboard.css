@@ -14,10 +14,21 @@
 
 .button{
   border: 1px solid blue;
-  display: block;
-  height: 30px;
-  width: 60%;
-  margin: 3% 20% 3% 20%;
+  border-radius: 1em;
+  font-size: 1em;
+  height: 28px;
+  width: 80%;
+  margin: 2% 10%;
+}
+
+.undo-button{
+  border: 1px solid red;
+  border-radius: 1em;
+  background-color: orange;
+  font-size: 1em;
+  height: 28px;
+  width: 80%;
+  margin: 2% 10%;
 }
 
 .reset-button{
@@ -27,6 +38,7 @@
   height: 2em;
   margin-left: 20%;
   margin-right: 20%;
-  border: 1px solid red;
-  background-color: orange;
+  border: 1px solid black;
+  border-radius: 2em;
+  background-color: red;
 }

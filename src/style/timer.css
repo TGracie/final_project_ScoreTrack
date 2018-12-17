@@ -3,16 +3,19 @@
   width: 50%;
   font-size: 1em;
   background-color: green;
+  border-radius: 1em;
 }
 
 .stop{
   width: 50%;
   font-size: 1em;
   background-color: yellow;
+  border-radius: 1em;
 }
 
 .reset{
   width: 50%;
   font-size: 1em;
   background-color: red;
+  border-radius: 1em;
 }

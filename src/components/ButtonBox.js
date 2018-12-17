@@ -12,13 +12,13 @@ const ButtonBox = (props) => {
   let buttons = []
     for(let key in scores){
         // console.log("key: " + key + "/ score: " + scores[key]);
-        buttons.push(<button className="button" value={scores[key]} onClick={handleClick}>{key}</button>)
+        buttons.push(<button className="button" value={scores[key]} name={key} onClick={handleClick}>{key}</button>)
     }
 
   function handleClick(event){
-    let value = event.target.value;
+    // let value = event.target.value;
     // console.log("Button value hopefully", value);
-    props.onScoreClicked(parseInt(value));
+    props.onScoreClicked(event);
   }
 
   return(

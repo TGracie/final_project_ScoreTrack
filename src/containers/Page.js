@@ -19,9 +19,15 @@ export default class Page extends Component{
           "Penalty Try": 7
         }
       },
-      team1: 0,
-      team2: 0
-    }
+      team1: {
+        tries: 0,
+        score: 0
+      },
+      team2: {
+        tries: 0,
+        score: 0
+      }
+    } // state end
 
     // method bindings in here
 
@@ -32,8 +38,8 @@ export default class Page extends Component{
       <div className="container">
         <h3 className="title">ScoreTrack</h3>
           <div className="scores">
-          <Scoreboard scores={this.state.rugby.scores}/>
-          <Scoreboard scores={this.state.rugby.scores}/>
+          <Scoreboard scores={this.state.rugby.scores} team={this.state.team1}/>
+          <Scoreboard scores={this.state.rugby.scores} team={this.state.team2}/>
           </div>
           <Timer2 className="timer" duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
       </div>

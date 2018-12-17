@@ -8,7 +8,8 @@ export default class Scoreboard extends Component {
       teamName: 'Team',
       named: false,
       score: 0,
-      lastOp: 0
+      lastOp: 0,
+      tries: this.props.team.tries
     }
     this.handleScore = this.handleScore.bind(this);
     this.oops = this.oops.bind(this);
@@ -16,7 +17,13 @@ export default class Scoreboard extends Component {
     this.setTeamName = this.setTeamName.bind(this);
   }
 
-  handleScore(value){
+  handleScore(event){
+    // let name = event.target.name
+    // if(name == "Try" || "Penalty Try"){
+    //
+    // }
+    let value = parseInt(event.target.value);
+    // console.log("click event", event.target.name);
     let currentScore = this.state.score;
     let newScore = currentScore + value;
     this.setState(
@@ -25,6 +32,8 @@ export default class Scoreboard extends Component {
       }
     );
   }
+
+  // add an if for value = 5 or 7 to ++ the tries counter?
 
   oops(){
     let currentScore = this.state.score;
@@ -56,7 +65,7 @@ export default class Scoreboard extends Component {
   }
 
   render(){
-
+    // console.log("team with tries and score?", this.props.team);
     let form = (this.state.named === false) ?
               <form onSubmit={this.setTeamName}>
               <input type="text" name="Team-Name" placeholder="Enter Team Name"/>

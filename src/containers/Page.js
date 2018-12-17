@@ -20,11 +20,9 @@ export default class Page extends Component{
         }
       },
       team1: {
-        tries: 0,
         score: 0
       },
       team2: {
-        tries: 0,
         score: 0
       }
     } // state end

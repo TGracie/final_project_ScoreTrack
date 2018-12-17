@@ -9,7 +9,7 @@ export default class Scoreboard extends Component {
       named: false,
       score: 0,
       lastOp: 0,
-      tries: this.props.team.tries
+      tries: 0
     }
     this.handleScore = this.handleScore.bind(this);
     this.oops = this.oops.bind(this);
@@ -63,7 +63,8 @@ export default class Scoreboard extends Component {
 
   reset(){
     this.setState(
-      {score: 0}
+      {score: 0,
+      tries: 0}
     )
   }
 

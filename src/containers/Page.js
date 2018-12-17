@@ -18,7 +18,9 @@ export default class Page extends Component{
           "Dropgoal": 3,
           "Penalty Try": 7
         }
-      }
+      },
+      team1: 0,
+      team2: 0
     }
 
     // method bindings in here

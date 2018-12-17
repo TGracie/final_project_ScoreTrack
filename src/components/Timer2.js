@@ -11,6 +11,7 @@ export default class Timer2 extends React.Component {
     this.startTimer = this.startTimer.bind(this)
     this.stopTimer = this.stopTimer.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
+    this.millisecondsToTime = this.millisecondsToTime.bind(this)
   }
   startTimer() {
     this.setState({
@@ -30,7 +31,17 @@ export default class Timer2 extends React.Component {
     this.setState({time: 0, isOn: false})
   }
 
+  millisecondsToTime()
+  {
+      let milli = this.state.time;
+      var seconds = Math.floor((milli / 1000) % 60);
+      var minutes = Math.floor((milli / (60 * 1000)) % 60);
+
+      return minutes + ":" + seconds;
+    }
+
   render() {
+    console.log("Prettier time?", this.millisecondsToTime());
     let start = (this.state.time === 0) ?
       <button className="start" onClick={this.startTimer}>START</button> :
       null
@@ -46,7 +57,7 @@ export default class Timer2 extends React.Component {
     return(
       <div className="timer">
         <h3>Time Played</h3>
-        <h3>{ms(this.state.time)}</h3>
+        <h3>{this.millisecondsToTime()}</h3>
         {start}
         {resume}
         {stop}

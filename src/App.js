@@ -7,7 +7,6 @@ class App extends Component {
   render() {
     return (
       <>
-      <h2>Begin</h2>
       <Page/>
       </>
     );

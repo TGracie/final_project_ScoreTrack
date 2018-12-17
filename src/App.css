@@ -1,8 +1,10 @@
-
+.title{
+  text-align: center;
+}
 .scores {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
+  grid-gap: 0.5em;
   margin: 10px;
 }
 
@@ -18,8 +20,47 @@
 }
 
 .button{
+  text-align: center;
   border: 1px solid blue;
+  width: 60%;
+  display: inline-block;
+}
+
+.reset-button{
+  text-align: center;
+  border: 1px solid blue;
+  width: 60%;
+  display: inline-block;
+  background-color: orange;
+}
+
+.timer{
+  border: 2px solid purple;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.start{
   width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+  font-size: 1em;
+  background-color: green;
+}
+
+.stop{
+  width: 50%;
+  font-size: 1em;
+  background-color: yellow;
+}
+
+.reset{
+  width: 50%;
+  font-size: 1em;
+  background-color: red;
+}
+
+footer{
+  vertical-align:text-bottom;
+  text-align: center;
 }

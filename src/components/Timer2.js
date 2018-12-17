@@ -32,20 +32,21 @@ export default class Timer2 extends React.Component {
 
   render() {
     let start = (this.state.time === 0) ?
-      <button onClick={this.startTimer}>start</button> :
+      <button className="start" onClick={this.startTimer}>START</button> :
       null
     let stop = (this.state.time === 0 || !this.state.isOn) ?
       null :
-      <button onClick={this.stopTimer}>stop</button>
+      <button className="stop" onClick={this.stopTimer}>STOP</button>
     let resume = (this.state.time === 0 || this.state.isOn) ?
       null :
-      <button onClick={this.startTimer}>resume</button>
+      <button className="start" onClick={this.startTimer}>RESUME</button>
     let reset = (this.state.time === 0 || this.state.isOn) ?
       null :
-      <button onClick={this.resetTimer}>reset</button>
+      <button className="reset" onClick={this.resetTimer}>RESET</button>
     return(
-      <div>
-        <h3>timer: {ms(this.state.time)}</h3>
+      <div className="timer">
+        <h3>Time Played</h3>
+        <h3>{ms(this.state.time)}</h3>
         {start}
         {resume}
         {stop}

@@ -24,11 +24,16 @@ export default class Scoreboard extends Component {
     let value = parseInt(event.target.value);
     let currentScore = this.state.score;
     let newScore = currentScore + value;
+    this.passingUp(value);
     this.setState(
       {score: newScore,
        lastOp: value,
       }
     );
+  }
+
+  passingUp(value){
+    this.props.passUp(value);
   }
 
   tryCount(name){
@@ -64,6 +69,7 @@ export default class Scoreboard extends Component {
     let currentScore = this.state.score;
     let newScore = currentScore - this.state.lastOp;
     this.tryCheck()
+    this.passingUp(this.state.lastOp * -1)
       if(this.state.score - this.state.lastOp > 0){
         this.setState({
           score: newScore,
@@ -77,6 +83,7 @@ export default class Scoreboard extends Component {
   }
 
   reset(){
+    this.props.reset();
     this.setState(
       {score: 0,
       tries: 0}
@@ -104,6 +111,11 @@ export default class Scoreboard extends Component {
               :
               null;
 
+    let lb = (this.props.team.losingBonus === true) ?
+            <h6>Losing Bonus</h6>
+            :
+            null;
+
     return(
       <div className="scoreboard">
       {form}
@@ -112,6 +124,7 @@ export default class Scoreboard extends Component {
       {this.state.score}
       </h3>
       <h5>Try Count: {this.state.tries} {bonus}</h5>
+      {lb}
       <ButtonBox scores={this.props.scores} onScoreClicked={this.handleScore}/>
       <button className="undo-button" value={this.state.lastOp} onClick={this.oops}>Undo</button>
       <button className="reset-button" onClick={this.reset}>Reset</button>

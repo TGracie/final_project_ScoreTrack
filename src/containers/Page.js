@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import ScoreboardCont from './ScoreboardCont.js';
 import Timer2 from '../components/Timer2.js';
-import Scoreboard from '../components/Scoreboard.js';
+// import Scoreboard from '../components/Scoreboard.js';
 // import {FacebookShareButton} from 'react-share';
 
 
@@ -35,13 +36,14 @@ export default class Page extends Component{
     return(
       <div className="container">
         <h3 className="title">ScoreTrack</h3>
-          <div className="scores">
-          <Scoreboard scores={this.state.rugby.scores} team={this.state.team1}/>
-          <Scoreboard scores={this.state.rugby.scores} team={this.state.team2}/>
-          </div>
+          <ScoreboardCont scores={this.state.rugby.scores}/>
           <Timer2 className="timer" duration={this.state.rugby.duration} periods={this.state.rugby.periods}/>
       </div>
     )
   }
 
 }// class end
+
+
+// <Scoreboard scores={this.state.rugby.scores}/>
+// <Scoreboard scores={this.state.rugby.scores}/>

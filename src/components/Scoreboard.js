@@ -32,7 +32,7 @@ export default class Scoreboard extends Component {
   }
 
   tryCount(name){
-    console.log("name", name);
+    // console.log("name", name);
     if(name === "Try"){
       this.setState({
         tries: this.state.tries + 1

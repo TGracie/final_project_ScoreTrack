@@ -12,6 +12,7 @@ export default class Timer2 extends React.Component {
     this.resetTimer = this.resetTimer.bind(this)
     this.millisecondsToTime = this.millisecondsToTime.bind(this)
   }
+
   startTimer() {
     this.setState({
       isOn: true,

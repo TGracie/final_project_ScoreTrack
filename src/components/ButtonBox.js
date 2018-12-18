@@ -12,7 +12,7 @@ const ButtonBox = (props) => {
   let buttons = []
     for(let key in scores){
         // console.log("key: " + key + "/ score: " + scores[key]);
-        buttons.push(<button className="button" value={scores[key]} name={key} onClick={handleClick}>{key}</button>)
+        buttons.push(<button key={key} className="button" value={scores[key]} name={key} onClick={handleClick}>{key}</button>)
     }
 
   function handleClick(event){

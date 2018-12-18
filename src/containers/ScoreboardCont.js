@@ -69,23 +69,24 @@ export default class ScoreboardCont extends Component {
   }
 
   reset1(){
-    let current = this.state.team1.score;
+    // let current = this.state.team1.score;
     let oppo = this.state.team2.score;
     this.setState({
       team1: {
         score: 0,
-        losingBonus: this.losingBonus(current, oppo)
+        losingBonus: false
       },
       team2: {
         score: oppo,
         losingBonus: false
       }
     })
+    // console.log("team 1", this.state.team1.score);
   }
-  
+
   reset2(){
-    let current = this.state.team2.score;
-    let oppo = this.state.team1.score;
+    // let current = this.state.team2.score;
+    // let oppo = this.state.team1.score;
     this.setState({
       team1: {
         score: this.state.team1.score,
@@ -93,7 +94,24 @@ export default class ScoreboardCont extends Component {
       },
       team2: {
         score: 0,
-        losingBonus: this.losingBonus(current, oppo)
+        losingBonus: false
+      }
+    })
+
+    this.checkLB();
+  }
+
+  checkLB(){
+    let team1 = this.state.team1.score;
+    let team2 = this.state.team2.score;
+    this.setState({
+      team1: {
+        score: team1,
+        losingBonus: this.losingBonus(team1, team2)
+      },
+      team2: {
+        score: team2,
+        losingBonus: this.losingBonus(team2, team1)
       }
     })
   }

@@ -67,6 +67,7 @@ export default class ScoreboardCont extends Component {
       return false
     }
   }
+
   reset1(){
     let current = this.state.team1.score;
     let oppo = this.state.team2.score;
@@ -81,6 +82,7 @@ export default class ScoreboardCont extends Component {
       }
     })
   }
+  
   reset2(){
     let current = this.state.team2.score;
     let oppo = this.state.team1.score;

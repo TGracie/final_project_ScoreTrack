@@ -16,6 +16,7 @@ export default class Scoreboard extends Component {
     this.reset = this.reset.bind(this);
     this.setTeamName = this.setTeamName.bind(this);
     this.tryCount = this.tryCount.bind(this);
+    this.tryCheck = this.tryCheck.bind(this);
   }
 
   handleScore(event){
@@ -44,11 +45,25 @@ export default class Scoreboard extends Component {
     }
   }
 
+  tryCheck(){
+    if(this.state.lastOp === 5){
+      this.setState({
+        tries: this.state.tries - 1
+      })
+    }
+    if(this.state.lastOp === 7){
+      this.setState({
+        tries: this.state.tries - 1
+      })
+    }
+  }
+
   // add an if for value = 5 or 7 to ++ the tries counter?
 
   oops(){
     let currentScore = this.state.score;
     let newScore = currentScore - this.state.lastOp;
+    this.tryCheck()
       if(this.state.score - this.state.lastOp > 0){
         this.setState({
           score: newScore,
@@ -77,7 +92,11 @@ export default class Scoreboard extends Component {
   }
 
   render(){
-    // console.log("team with tries and score?", this.props.team);
+    let bonus = (this.state.tries >= 4) ?
+            "BP"
+            :
+            null;
+
     let form = (this.state.named === false) ?
               <form onSubmit={this.setTeamName}>
               <input type="text" name="Team-Name" placeholder="Enter Team Name"/>
@@ -92,7 +111,7 @@ export default class Scoreboard extends Component {
       <h3 className="nums">
       {this.state.score}
       </h3>
-      <h5>Try Count: {this.state.tries}</h5>
+      <h5>Try Count: {this.state.tries} {bonus}</h5>
       <ButtonBox scores={this.props.scores} onScoreClicked={this.handleScore}/>
       <button className="undo-button" value={this.state.lastOp} onClick={this.oops}>Undo</button>
       <button className="reset-button" onClick={this.reset}>Reset</button>

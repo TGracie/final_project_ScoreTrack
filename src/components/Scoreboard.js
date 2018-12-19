@@ -17,6 +17,7 @@ export default class Scoreboard extends Component {
     this.setTeamName = this.setTeamName.bind(this);
     this.tryCount = this.tryCount.bind(this);
     this.tryCheck = this.tryCheck.bind(this);
+    this.resetName = this.resetName.bind(this);
   }
 
   handleScore(event){
@@ -98,6 +99,13 @@ export default class Scoreboard extends Component {
     )
   }
 
+  resetName(){
+    this.setState(
+      {teamName: 'Team',
+       named: false}
+    )
+  }
+
   render(){
     let bonus = (this.state.tries >= 4) ?
             "BP"
@@ -119,7 +127,7 @@ export default class Scoreboard extends Component {
     return(
       <div className="scoreboard">
       {form}
-      <h3>{this.state.teamName}</h3>
+      <h3 onClick={this.resetName}>{this.state.teamName}</h3>
       <h3 className="nums">
       {this.state.score}
       </h3>

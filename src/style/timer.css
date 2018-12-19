@@ -19,3 +19,19 @@
   background-color: red;
   border-radius: 1em;
 }
+
+.over{
+  /* border: 1px solid yellow; */
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #ffa0aa;
+}
+
+.under{
+  /* border: 1px solid yellow; */
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: white;
+}

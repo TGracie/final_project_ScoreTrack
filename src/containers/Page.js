@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import ScoreboardCont from './ScoreboardCont.js';
 import Timer2 from '../components/Timer2.js';
-// import Scoreboard from '../components/Scoreboard.js';
-// import {FacebookShareButton} from 'react-share';
-
 
 export default class Page extends Component{
   constructor(props){

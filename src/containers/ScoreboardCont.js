@@ -20,7 +20,7 @@ export default class ScoreboardCont extends Component {
     this.losingBonus = this.losingBonus.bind(this);
     this.reset1 = this.reset1.bind(this);
     this.reset2 = this.reset2.bind(this);
-    this.checkLB = this.checkLB.bind(this);
+    // this.checkLB = this.checkLB.bind(this);
   }// constructor end
 
   handleScore1(value){
@@ -107,23 +107,23 @@ export default class ScoreboardCont extends Component {
     });
   }
 
-  checkLB(){
-    let team1 = this.state.team1.score;
-    let team2 = this.state.team2.score;
-    let lb1 = this.losingBonus(team1, team2)
-    let lb2 = this.losingBonus(team2, team1)
-
-    this.setState({
-      team1: {
-        score: team1,
-        losingBonus: lb1
-      },
-      team2: {
-        score: team2,
-        losingBonus: lb2
-      }
-    })
-  }
+  // checkLB(){
+  //   let team1 = this.state.team1.score;
+  //   let team2 = this.state.team2.score;
+  //   let lb1 = this.losingBonus(team1, team2)
+  //   let lb2 = this.losingBonus(team2, team1)
+  //
+  //   this.setState({
+  //     team1: {
+  //       score: team1,
+  //       losingBonus: lb1
+  //     },
+  //     team2: {
+  //       score: team2,
+  //       losingBonus: lb2
+  //     }
+  //   })
+  // }
 
 
   // just pass down a getter

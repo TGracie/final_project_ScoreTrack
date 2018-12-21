@@ -43,7 +43,7 @@ export default class Timer2 extends React.Component {
       if (minutes < 10){
         minutes = "0" + minutes;
       }
-      if (minutes >= (this.props.duration / this.props.sections)){
+      if (minutes >= (this.props.duration / this.props.section)){
         return <h3 className="over">{minutes}:{seconds}</h3>
       }
       return <h3 className="under">{minutes}:{seconds}</h3>;
